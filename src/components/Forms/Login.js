@@ -7,6 +7,7 @@ import Image from "react-bootstrap/Image";
 import "../styles.css";
 
 export default function Login() {
+  // should be wrapped into useCallback and moved out to custom hook
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event.target[0].value);
@@ -29,6 +30,7 @@ export default function Login() {
       <Container className="Loginpage">
         <Row>
           <Col>
+            {/*onSubmit does nothing*/}
             <form onSubmit={handleSubmit}>
               <label>
                 username

@@ -18,7 +18,7 @@ function TopNav() {
                 <Link to="/Login">
                   <Button variant="primary">Log in</Button>
                 </Link>
-
+                {/*Why do you need this button ? */}
                 <Button as="a" variant="dark">
                   Start your free trial
                 </Button>
@@ -33,7 +33,9 @@ function TopNav() {
         variant="dark"
         style={{ marginBottom: "15px", boxShadow: "5px 5px 13px #666" }}
       >
+        {/*you should have only 1 container per page*/}
         <Container>
+          {/*what this navbar does? It seems to be hardcoded*/}
           <Navbar.Brand href="#home">Popular Titles</Navbar.Brand>
         </Container>
       </Navbar>

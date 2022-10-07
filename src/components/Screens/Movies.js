@@ -11,19 +11,21 @@ import Col from "react-bootstrap/Col";
 export default function Movies() {
   const [searchText, setSearchText] = useState("");
   const [list, setList] = useState(Data.entries);
-
+  // the same comment as for seriesData()
   function filterMovies() {
     const arr = Data.entries.filter((item) => {
       return item.programType === "movie";
     });
     return arr;
   }
+  // the same comment as for useEffect in Series
   useEffect(() => {
     setList(filterMovies());
   }, []);
-
+  // the same comment as for useEffect in Series
   useEffect(() => {
     const arr = filterMovies().filter((item) => {
+      // this checking is not needed
       if (searchText != "") {
         return item.title.toLowerCase().includes(searchText.toLowerCase());
         // item.programType === "movie"
@@ -46,6 +48,7 @@ export default function Movies() {
   //   setList(arr);
   // }
 
+  // should be wrapped into useCallback and moved out to custom hook
   function handleChange(e) {
     setSearchText(e.target.value);
   }
@@ -67,11 +70,13 @@ export default function Movies() {
         {/* {(searchText!==""){
 
         }
-        
+
         } */}
         {list.map((item) => {
+          // key is missing. Please see the console and you will see a lot of errors
           return (
             <Col>
+              {/*The Card should be moved to separate component. It will allow you to reuse it in Series and here*/}
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={item.images["Poster Art"].url} />
                 <Card.Body>
