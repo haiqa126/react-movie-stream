@@ -8,9 +8,11 @@ import { Link } from "react-router-dom";
 function Cards() {
   return (
     <>
+      {/*The container should be a wrapper for the main content on the page. You're using it in several auxiliary components*/}
       <Container>
         <Row>
           <Col>
+            {/*It would be nice to move out Card to separate component, as it can be reused here 2 times wit less code duplication*/}
             <Card style={{ width: "18rem", height: "80px", marginTop: "10px" }}>
               <Card.Img variant="top" src="/movie.jpg" />
               <Card.Body>

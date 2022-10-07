@@ -15,7 +15,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Movies" element={<Movies />} />
       </Routes>
-
+      {/*Please handle not found case*/}
       {/* <Home /> */}
     </>
   );
